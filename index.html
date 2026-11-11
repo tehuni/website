@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="ProcessForge Engineering — process simulation, computational modeling and AI-driven engineering by Mostafa Ghiyami.">
+<title>ProcessForge Engineering | Mostafa Ghiyami</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#10243e;--blue:#3478f6;--cyan:#43c6d9;--pale:#edf4ff;--ink:#18263a;--muted:#718096;--line:#e6ebf2;--soft:#f6f8fb}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{font-family:'DM Sans',sans-serif;color:var(--ink);line-height:1.7;background:#fff}
+a{text-decoration:none;color:inherit}
+.container{width:min(1160px,calc(100% - 48px));margin:auto}
+header{height:76px;position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{height:100%;display:flex;align-items:center;justify-content:space-between}
+.brand{font:800 19px Manrope,sans-serif;letter-spacing:-.7px;color:var(--navy)}
+.brand span{color:var(--blue)}
+.navlinks{display:flex;align-items:center;gap:23px;font-size:12px;font-weight:700;color:#526178}
+.navlinks a:hover{color:var(--blue)}
+.nav-cta{background:var(--navy);color:#fff!important;padding:10px 15px;border-radius:6px}
+.menu{display:none;border:0;background:none;font-size:25px;color:var(--navy)}
+.hero{padding:92px 0 85px;background:radial-gradient(circle at 83% 16%,#e9f2ff 0,transparent 33%),linear-gradient(180deg,#fff,#fafcff)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:54px}
+.kicker,.eyebrow{display:inline-flex;align-items:center;gap:9px;border-radius:30px;background:var(--pale);color:var(--blue);padding:7px 12px;font-size:10px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase}
+.pulse{width:7px;height:7px;border-radius:50%;background:var(--cyan)}
+h1,h2,h3{font-family:Manrope,sans-serif}
+h1{font-size:clamp(42px,5.2vw,65px);line-height:1.12;letter-spacing:-2.5px;color:var(--navy);margin:23px 0 20px}
+h1 em{font-style:normal;color:var(--blue)}
+.lead{max-width:600px;color:var(--muted);font-size:15px;line-height:1.95}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:29px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 19px;border-radius:7px;font-size:12px;font-weight:800;transition:.2s}
+.primary{background:var(--blue);color:#fff}.primary:hover{background:#1e5fd4;transform:translateY(-2px)}
+.secondary{border:1px solid #d9e1ec;background:#fff;color:var(--navy)}.secondary:hover{border-color:var(--blue);color:var(--blue)}
+.hero-visual{position:relative}
+.hero-visual img{width:100%;height:390px;display:block;object-fit:cover;border-radius:14px;box-shadow:0 22px 55px #10243e1c}
+.visual-caption{position:absolute;left:-20px;bottom:18px;background:#fff;border:1px solid var(--line);border-radius:9px;padding:13px 17px;box-shadow:0 12px 30px #10243e12}
+.visual-caption b{display:block;color:var(--navy);font-size:12px}.visual-caption span{font-size:10px;color:var(--muted)}
+section{padding:82px 0}
+.section-kicker{font-size:10px;font-weight:800;letter-spacing:1.7px;text-transform:uppercase;color:var(--blue);margin-bottom:9px}
+.section-title{font-size:32px;line-height:1.3;letter-spacing:-1px;color:var(--navy)}
+.section-intro{max-width:690px;color:var(--muted);font-size:13px;line-height:1.9;margin-top:12px}
+.soft{background:var(--soft)}
+.interest-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-top:34px}
+.interest{background:#fff;border:1px solid var(--line);border-radius:10px;padding:22px;transition:.25s}
+.interest:hover,.project:hover{transform:translateY(-4px);box-shadow:0 15px 35px #10243e0d;border-color:#c5d8fb}
+.iconbox{width:42px;height:42px;border-radius:9px;background:var(--pale);display:grid;place-items:center;color:var(--blue);font-size:19px;margin-bottom:15px}
+.interest h3{font-size:14px;color:var(--navy);margin-bottom:7px}.interest p{font-size:11px;color:var(--muted);line-height:1.8}
+.project-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:35px}
+.project{border:1px solid var(--line);border-radius:11px;overflow:hidden;transition:.25s;background:#fff}
+.project img{width:100%;height:220px;object-fit:cover;display:block;background:#e9eef5}
+.project-body{padding:22px}
+.project-no{font-size:10px;font-weight:800;letter-spacing:1.3px;color:var(--blue)}
+.project h3{font-size:18px;line-height:1.4;color:var(--navy);margin:7px 0}
+.project p{font-size:12px;line-height:1.85;color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0 4px}
+.tag{font-size:9px;font-weight:700;color:#49658b;background:#f0f5fc;padding:5px 9px;border-radius:4px}
+.about-grid{display:grid;grid-template-columns:1fr .9fr;gap:55px;align-items:center}
+.about-copy p{font-size:13px;color:var(--muted);line-height:2;margin-top:14px}
+.about-image{width:100%;height:350px;object-fit:cover;border-radius:12px}
+.facts{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:22px}
+.fact{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px}
+.fact b{display:block;color:var(--blue);font:800 19px Manrope}.fact span{font-size:10px;color:var(--muted)}
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
+.skillbox{border:1px solid var(--line);border-radius:10px;padding:22px}
+.skillbox h3{font-size:14px;color:var(--navy);margin-bottom:10px}
+.skillbox li{list-style:none;padding:9px 0;border-bottom:1px solid #f0f2f5;font-size:11px;color:#64738a}
+.skillbox li:last-child{border:0}
+.publication{padding:19px 22px;border:1px solid var(--line);border-radius:9px;background:#fff;margin-top:12px}
+.publication h3{font:700 13px/1.7 'DM Sans',sans-serif;color:var(--navy)}
+.publication p{font-size:11px;color:var(--muted);margin-top:5px}
+.publication a{display:inline-block;color:var(--blue);font-size:11px;font-weight:800;margin-top:9px}
+.pub-year{display:inline-block;color:#4d6b94;background:#eff4fb;border-radius:4px;padding:3px 7px;font-size:9px;font-weight:800;margin-bottom:7px}
+.review{margin-top:20px;padding:22px 24px;background:#f1f6ff;border-left:3px solid var(--blue);border-radius:7px}
+.review h3{font-size:15px;color:var(--navy);margin-bottom:6px}.review p{font-size:12px;color:#5e6f86;line-height:1.9}
+.order{background:linear-gradient(120deg,#10243e,#183d65);color:#fff}
+.order-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:35px;align-items:center}
+.order .section-kicker{color:#8db5ff}.order h2{font-size:34px;line-height:1.3;letter-spacing:-1px}.order p{font-size:13px;color:#c2d0e1;line-height:1.9;margin-top:12px;max-width:650px}
+.order-list{display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;margin-top:20px}
+.order-list span{font-size:11px;color:#e1eaf5}.order-list span:before{content:'✓';color:#69d2df;margin-right:8px;font-weight:800}
+.order-card{background:#ffffff10;border:1px solid #ffffff26;border-radius:11px;padding:24px}
+.order-card h3{font-size:17px;margin-bottom:8px}.order-card p{font-size:11px;margin:0 0 16px}
+.order-card .btn{width:100%;background:#fff;color:var(--navy)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:35px;margin-top:28px}
+.contact-item{display:flex;align-items:center;gap:12px;padding:13px 0;border-bottom:1px solid var(--line);font-size:13px;color:#526178}
+.contact-icon{width:36px;height:36px;border-radius:8px;background:var(--pale);color:var(--blue);display:grid;place-items:center;font-weight:800}
+.contact-note{background:var(--soft);border:1px solid var(--line);padding:22px;border-radius:10px}
+.contact-note h3{font-size:15px;color:var(--navy);margin-bottom:7px}.contact-note p{font-size:12px;color:var(--muted);line-height:1.9}
+footer{background:#0b1b30;color:#91a0b5;padding:20px 0;font-size:10px}
+.footer-row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media(max-width:900px){.navlinks{gap:12px;font-size:10px}.interest-grid{grid-template-columns:repeat(2,1fr)}.hero-grid{gap:28px}}
+@media(max-width:680px){.container{width:calc(100% - 36px)}header{height:68px}.menu{display:block}.navlinks{display:none;position:absolute;top:68px;left:0;right:0;background:#fff;padding:20px 24px;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:15px}.navlinks.open{display:flex}.hero{padding:62px 0}.hero-grid,.about-grid,.order-grid,.contact-grid{grid-template-columns:1fr}.hero h1{font-size:43px}.hero-visual{margin:15px 12px 0}.hero-visual img{height:290px}.visual-caption{left:-12px}.section-title{font-size:27px}section{padding:62px 0}.interest-grid{grid-template-columns:1fr 1fr;gap:9px}.interest{padding:16px}.project-grid,.skills{grid-template-columns:1fr}.project img{height:195px}.about-image{height:270px}.order h2{font-size:28px}.order-card{margin-top:8px}}
+@media(max-width:390px){.interest-grid{grid-template-columns:1fr}.order-list{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div class="container nav">
+<a class="brand" href="#home">PROCESS<span>FORGE</span></a>
+<button class="menu" id="menu" aria-label="Open menu">☰</button>
+<nav class="navlinks" id="navlinks">
+<a href="#home">Home</a><a href="#about">About</a><a href="#research">Research</a><a href="#projects">Projects</a><a href="#publications">Publications</a><a href="#skills">Expertise</a><a href="#order" class="nav-cta">Order a Project</a>
+</nav></div></header>
+<main>
+<section class="hero" id="home"><div class="container hero-grid"><div>
+<div class="kicker"><span class="pulse"></span> Process Simulation & Engineering</div>
+<h1>Model. Simulate.<br><em>Optimize.</em></h1>
+<p class="lead">ProcessForge Engineering is the research and engineering portfolio of Mostafa Ghiyami, a Chemical Engineer specializing in process simulation, computational modeling, and AI-driven engineering solutions for energy and chemical processes.</p>
+<div class="actions"><a class="btn primary" href="#projects">Explore Engineering Projects ↗</a><a class="btn secondary" href="#order">Discuss Your Project</a></div>
+</div><div class="hero-visual">
+<img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1100&q=85" alt="Industrial process engineering and technical equipment">
+<div class="visual-caption"><b>ProcessForge Engineering</b><span>Simulation · Modeling · Optimization</span></div>
+</div></div></section>
+
+<section class="soft" id="research"><div class="container">
+<div class="section-kicker">Research & Capabilities</div><h2 class="section-title">Engineering Focus Areas</h2>
+<p class="section-intro">Combining chemical engineering fundamentals, process simulators, and data-driven methods to understand and improve complex systems.</p>
+<div class="interest-grid">
+<div class="interest"><div class="iconbox">⚗</div><h3>Process Simulation</h3><p>Flowsheet development, thermodynamic modeling, process design and optimization.</p></div>
+<div class="interest"><div class="iconbox">H₂</div><h3>Hydrogen & Clean Energy</h3><p>Hydrogen production, integrated energy systems and thermochemical conversion.</p></div>
+<div class="interest"><div class="iconbox">⌘</div><h3>AI & Machine Learning</h3><p>Predictive modeling, hybrid algorithms and data-driven process optimization.</p></div>
+<div class="interest"><div class="iconbox">♻</div><h3>Gasification</h3><p>Biomass conversion, supercritical water gasification and plasma gasification.</p></div>
+</div></div></section>
+
+<section id="projects"><div class="container">
+<div class="section-kicker">Selected Engineering Work</div><h2 class="section-title">Simulation & Modeling Projects</h2>
+<p class="section-intro">Selected areas of project experience. Detailed case studies, process flow diagrams, model assumptions and results can be added as individual project pages.</p>
+<div class="project-grid">
+<article class="project"><img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=85" alt="Chemical engineering laboratory and process equipment"><div class="project-body"><div class="project-no">PROJECT AREA 01</div><h3>Integrated HTGR–SCWG–SOEC–SOFC System</h3><p>Thermodynamic simulation and heat integration of an integrated system for hydrogen and electricity co-production, with a focus on process performance and optimization.</p><div class="tags"><span class="tag">Aspen Plus</span><span class="tag">SCWG</span><span class="tag">SOEC / SOFC</span><span class="tag">Heat Integration</span></div></div></article>
+<article class="project"><img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1000&q=85" alt="Energy generation and industrial gasification facility"><div class="project-body"><div class="project-no">PROJECT AREA 02</div><h3>Biomass & Wastewater Gasification</h3><p>Process modeling of conventional and supercritical water gasification routes, including product gas composition, operating conditions and energy performance.</p><div class="tags"><span class="tag">Gasification</span><span class="tag">Hydrogen</span><span class="tag">Thermodynamics</span><span class="tag">Energy Analysis</span></div></div></article>
+<article class="project"><img src="https://images.unsplash.com/photo-1565514020179-026b92b84bb6?auto=format&fit=crop&w=1000&q=85" alt="Industrial chemical processing plant"><div class="project-body"><div class="project-no">PROJECT AREA 03</div><h3>Amine-Based Natural Gas Sweetening</h3><p>Simulation and analysis of sour gas treatment, examining feed composition, acid gas removal, solvent requirements and process performance.</p><div class="tags"><span class="tag">Aspen HYSYS</span><span class="tag">Aspen Plus</span><span class="tag">Gas Sweetening</span><span class="tag">Exergy</span></div></div></article>
+<article class="project"><img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1000&q=85" alt="Artificial intelligence and computational modeling concept"><div class="project-body"><div class="project-no">PROJECT AREA 04</div><h3>AI-Driven Process Modeling & Optimization</h3><p>Hybrid machine-learning workflows for predicting process behavior, interpreting operating variables and supporting engineering optimization.</p><div class="tags"><span class="tag">Python</span><span class="tag">TabNet</span><span class="tag">Genetic Algorithms</span><span class="tag">Machine Learning</span></div></div></article>
+</div></div></section>
+
+<section class="soft" id="about"><div class="container about-grid"><div class="about-copy">
+<div class="section-kicker">About the Engineer</div><h2 class="section-title">Mostafa Ghiyami</h2>
+<p>I am a Chemical Engineer with an MSc from the University of Tehran. My work brings together process simulation, thermodynamic analysis, computational modeling and machine learning, with applications in hydrogen production, gasification, gas processing and clean energy systems.</p>
+<p>Alongside research, I undertake independent engineering and programming projects, helping translate process requirements and data into simulation-based analysis and practical modeling solutions.</p>
+<div class="facts"><div class="fact"><b>MSc</b><span>Chemical Engineering · University of Tehran</span></div><div class="fact"><b>2018–2026</b><span>Independent simulation & programming projects</span></div></div>
+</div><img class="about-image" src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=1000&q=85" alt="Engineer working with industrial process equipment"></div></section>
+
+<section id="skills"><div class="container"><div class="section-kicker">Technical Expertise</div><h2 class="section-title">Software & Methods</h2><p class="section-intro">Tools and methods applied across process engineering, data analysis and computational research.</p>
+<div class="skills">
+<div class="skillbox"><h3>Process Engineering</h3><ul><li>Aspen Plus</li><li>Aspen HYSYS</li><li>Process simulation & flowsheeting</li><li>Thermodynamic and exergy analysis</li><li>Process optimization</li></ul></div>
+<div class="skillbox"><h3>Programming & Data</h3><ul><li>Python</li><li>MATLAB</li><li>C#</li><li>SQL</li><li>Microsoft Excel</li></ul></div>
+<div class="skillbox"><h3>AI & Modeling</h3><ul><li>Machine learning</li><li>TabNet</li><li>Genetic algorithms</li><li>Hybrid data-driven modeling</li><li>Predictive process analysis</li></ul></div>
+</div></div></section>
+
+<section class="soft" id="publications"><div class="container"><div class="section-kicker">Scientific Contributions</div><h2 class="section-title">Selected Publications</h2><p class="section-intro">Peer-reviewed research in integrated energy systems, hydrogen production, gasification and AI-assisted process modeling.</p>
+
+<div class="publication"><span class="pub-year">2026</span><h3>Ghiyami, M. (2026). Design and optimization of an integrated HTGR-SCWG-SOEC-SOFC system for co-production of hydrogen and electricity: Thermodynamic simulation and heat integration.</h3><p><i>Energy Conversion and Management</i>, 370, 122127.</p><a href="https://doi.org/10.1016/j.enconman.2026.122127" target="_blank" rel="noopener">DOI: 10.1016/j.enconman.2026.122127 ↗</a></div>
+
+<div class="publication"><span class="pub-year">2026</span><h3>Ghiyami, M., & Qeeyami, M. A. (2026). Hybrid thermodynamic and data-driven modeling of hydrogen production from fermentation-derived wastewaters via supercritical water gasification.</h3><p><i>Results in Engineering</i>, 32, 111966.</p><a href="https://doi.org/10.1016/j.rineng.2026.111966" target="_blank" rel="noopener">DOI: 10.1016/j.rineng.2026.111966 ↗</a></div>
+
+<div class="publication"><span class="pub-year">2026</span><h3>Ghiyami, M., Hazara, A., & Hazara, R. (2026). Effect of sour gas composition on amine-based gas sweetening: A hybrid simulation-machine learning model.</h3><p><i>Array</i>, 30, 100958.</p><a href="https://doi.org/10.1016/j.array.2026.100958" target="_blank" rel="noopener">DOI: 10.1016/j.array.2026.100958 ↗</a></div>
+
+<div class="publication"><span class="pub-year">2024</span><h3>Ghiyami, M., Bahramian, A., & Sedaee, B. (2024). Development and performance assessment of a novel multigeneration clean energy system based on biomass-LNG using a dynamic model and supervised learning algorithms.</h3><p><i>International Journal of Hydrogen Energy</i>, 66, 10–23.</p><a href="https://doi.org/10.1016/j.ijhydene.2024.04.111" target="_blank" rel="noopener">DOI: 10.1016/j.ijhydene.2024.04.111 ↗</a></div>
+
+<div class="publication"><span class="pub-year">2026</span><h3>Ghiyami, M. (2026). Unveiling operating-regime-dependent interactions in PEM electrolyzers: A multi-stage hybrid AI framework for green hydrogen prediction.</h3><p><i>Next Energy</i>, 13, 101116.</p><a href="https://doi.org/10.1016/j.nxener.2026.101116" target="_blank" rel="noopener">DOI: 10.1016/j.nxener.2026.101116 ↗</a></div>
+
+<div class="review"><h3>Peer Review & Academic Service</h3><p>Scientific peer reviewer for research manuscripts in hydrogen production and supercritical water gasification, including reviewing contributions for the <i>International Journal of Hydrogen Energy</i>.</p></div>
+</div></section>
+
+<section class="order" id="order"><div class="container order-grid"><div>
+<div class="section-kicker">Engineering Services</div><h2>Have a Simulation or Modeling Project?</h2>
+<p>Get in touch to discuss your project requirements. I provide independent support in process simulation, computational modeling, data-driven analysis and engineering optimization.</p>
+<div class="order-list"><span>Process simulation & flowsheeting</span><span>Thermodynamic modeling</span><span>Gasification process modeling</span><span>AI & machine-learning models</span><span>Process optimization</span><span>Engineering data analysis</span></div>
+</div><div class="order-card"><h3>Project Inquiries</h3><p>For project orders, technical consultation or collaboration, please contact me directly.</p><a class="btn" href="mailto:Mostafa.afg1994@gmail.com?subject=Engineering%20Project%20Inquiry">Contact Me to Order a Project ↗</a></div>
+</div></section>
+
+<section id="contact"><div class="container"><div class="section-kicker">Contact</div><h2 class="section-title">Let's Discuss Your Project</h2><p class="section-intro">For engineering project inquiries, research collaboration or professional opportunities, feel free to get in touch.</p>
+<div class="contact-grid"><div>
+<div class="contact-item"><div class="contact-icon">✉</div><a href="mailto:Mostafa.afg1994@gmail.com">Mostafa.afg1994@gmail.com</a></div>
+<div class="contact-item"><div class="contact-icon">☎</div><a href="tel:+989339739710">+98 933 973 9710</a></div>
+<div class="contact-item"><div class="contact-icon">⌘</div><a href="https://github.com/tehuni" target="_blank" rel="noopener">GitHub · github.com/tehuni</a></div>
+<div class="contact-item"><div class="contact-icon">iD</div><a href="https://orcid.org/0009-0008-8484-7722" target="_blank" rel="noopener">ORCID · 0009-0008-8484-7722</a></div>
+</div><div class="contact-note"><h3>For Project Orders</h3><p>To request a process simulation, modeling, optimization or programming project, please contact me by email or phone. We can discuss the scope, required data and expected deliverables.</p></div></div>
+</div></section>
+</main>
+<footer><div class="container footer-row"><span>© 2026 ProcessForge Engineering · Mostafa Ghiyami</span><span>Process Simulation · Modeling · Optimization</span></div></footer>
+<script>
+const menu=document.getElementById('menu'),nav=document.getElementById('navlinks');
+menu.addEventListener('click',()=>{nav.classList.toggle('open');menu.textContent=nav.classList.contains('open')?'✕':'☰';});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.textContent='☰';}));
+</script>
+</body>
+</html>
